@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "futura md bt";
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+header {
+    background: #fff;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25%; /* Ajusta el padding para que sea responsive */
+}
+
+header .logo {
+    background-image: url('../img/logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40%; /* Ajusta el tamaño del logo para que sea responsive */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    z-index: 1; /* Asegura que el logo esté por debajo del menú */
+    position: relative; /* Establece una posición relativa para que el z-index funcione */
+}
+
+header nav {
+    position: absolute; /* Posiciona el menú de navegación de forma absoluta */
+    width: 55%; /* Ocupa el 60% del ancho del header */
+    right: 0; /* Alinea el menú a la derecha */
+    top: 30px; /* Coloca el menú debajo del header */
+    background: #fff;
+    padding: 1px;
+    transition: 0.3s;
+    z-index: 2; /* Asegura que el menú esté por encima del logo */
+}
+
+/* Media query para dispositivos más pequeños */
+@media only screen and (max-width: 700px) {
+    header nav {
+        width: 100%; /* En dispositivos pequeños, el menú ocupa todo el ancho */
+        left: 0; /* Ajusta la posición del menú para dispositivos más pequeños */
+        top: 70px; /* Ajusta la posición del menú para dispositivos más pequeños */
+    }
+}
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header nav ul li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+header nav ul li a {
+    display: inline-block;
+    color: #00aeff;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    font-size: 20px;
+    position: relative;
+}
+
+header nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff0000;
+}
+
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #00b7ff;
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 5%; /* Ajusta el padding para dispositivos más pequeños */
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: #fff;
+        padding: 10px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: right;
+}
+
+.center-text h1 {
+    font-size: 10rem; /* Tamaño del texto para computadoras */
+    color: #050505;
+}
+
+
+/* Media Queries para ajustar el tamaño del texto en diferentes tamaños de pantalla */
+@media only screen and (max-width: 1023px) {
+    .center-text h1 {
+        font-size: 5rem; /* Tamaño del texto para tabletas */
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .center-text h1 {
+        font-size: 5rem; /* Tamaño del texto para dispositivos móviles */
+    }
+}
+/* Estilos generales */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-image: url('../img/logocontacto.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .image-container {
+        /* Estilos para dispositivos móviles */
+        height: 35vh; /* Reducir la altura en dispositivos móviles */
+    }
+}
+
+/* Media Queries para tabletas */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .image-container {
+        /* Estilos para tabletas */
+        height: 35vh; /* Ajustar la altura para tabletas */
+    }
+}
+
+/* Media Queries para computadoras */
+@media only screen and (min-width: 1024px) {
+    .image-container {
+        /* Estilos para computadoras */
+        height: 100vh; /* Mantener la altura completa en computadoras */
+    }
+}
+/* Media Queries para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .image-container {
+        /* Estilos para dispositivos móviles */
+        height: 35vh; /* Reducir la altura en dispositivos móviles */
+    }
+}
+
+/* Media Queries para tabletas */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .image-container {
+        /* Estilos para tabletas */
+        height: 35vh; /* Ajustar la altura para tabletas */
+    }
+}
+
+/* Media Queries para computadoras */
+@media only screen and (min-width: 1024px) {
+    .image-container {
+        /* Estilos para computadoras */
+        height: 100vh; /* Mantener la altura completa en computadoras */
+    }
+}
+/* Estilo para dispositivos pequeños */
+@media screen and (max-width: 768px) {
+    .title-container h3 {
+        color: #000000; /* Color del texto */
+        font-size: 18px; /* Tamaño de fuente más pequeño para dispositivos pequeños */
+        opacity: 0.8; /* Opacidad del texto */
+        font-weight: bold; /* Peso de la fuente */
+        text-align: center; /* Alineación del texto */
+    }
+
+    .image-wrapper {
+        max-width: 80%; /* El cuadro ocupa el 80% del ancho de la pantalla */
+        margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontal */
+        padding: 10px; /* Espacio interior del cuadro */
+    }
+
+    .form-container {
+        width: 90%; /* El formulario ocupa el 90% del ancho disponible */
+        max-width: 90%; /* Ancho máximo del formulario */
+        margin: 0 auto; /* Centrar el formulario horizontalmente */
+        padding: 10px; /* Espacio interior del formulario */
+        background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    }
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/* Estilos para dispositivos pequeños */
+@media screen and (max-width: 768px) {
+    /* Ajuste del tamaño del cuadro para dispositivos pequeños */
+    .image-container {
+        width: 80%; /* El cuadro ocupa el 80% del ancho de la pantalla */
+        margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontal */
+        padding: 10px; /* Espacio interior del cuadro */
+    }
+
+    /* Ajuste del tamaño del título para dispositivos pequeños */
+    .title-container h3 {
+        font-size: 24px; /* Tamaño de fuente más pequeño para dispositivos pequeños */
+    }
+}
+
+
+.contacto-acreditacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.contacto-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 250px; /* Espacio entre los íconos */
+    margin-bottom: 20px; /* Espacio entre los elementos .contacto-item */
+}
+
+.contacto-item i {
+    font-size: 100px; /* Tamaño del ícono */
+    margin-bottom: 20px; /* Espacio entre el ícono y el texto */
+}
+
+.contacto-text {
+    font-size: 40px; /* Tamaño del texto */
+    text-align: center; /* Centrar el texto */
+}
+
+.contacto-acreditacion {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #c7c6c6; /* Cambia el color de fondo del cuadro */
+    padding: 20px; /* Añade espacio alrededor del contenido */
+}
+
+.contacto-item {
+    text-align: center;
+    margin: 10px;
+}
+
+.contacto-item img {
+    width: 350px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.contacto-item p {
+    font-size: 18px; /* Cambia el tamaño del texto de contacto */
+}
+
+.acreditacion-item {
+    text-align: center;
+    margin: 10px;
+}
+
+.stars {
+    color: #ffd700; /* Cambia el color de las estrellas */
+    font-size: 50px; /* Cambia el tamaño de las estrellas */
+}

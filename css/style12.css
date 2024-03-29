@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "futura md bt";
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+header {
+    background: #fff;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25%; /* Ajusta el padding para que sea responsive */
+}
+
+header .logo {
+    background-image: url('../img/logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40%; /* Ajusta el tamaño del logo para que sea responsive */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    z-index: 1; /* Asegura que el logo esté por debajo del menú */
+    position: relative; /* Establece una posición relativa para que el z-index funcione */
+}
+
+header nav {
+    position: absolute; /* Posiciona el menú de navegación de forma absoluta */
+    width: 55%; /* Ocupa el 60% del ancho del header */
+    right: 0; /* Alinea el menú a la derecha */
+    top: 30px; /* Coloca el menú debajo del header */
+    background: #fff;
+    padding: 1px;
+    transition: 0.3s;
+    z-index: 2; /* Asegura que el menú esté por encima del logo */
+}
+
+/* Media query para dispositivos más pequeños */
+@media only screen and (max-width: 700px) {
+    header nav {
+        width: 100%; /* En dispositivos pequeños, el menú ocupa todo el ancho */
+        left: 0; /* Ajusta la posición del menú para dispositivos más pequeños */
+        top: 70px; /* Ajusta la posición del menú para dispositivos más pequeños */
+    }
+}
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header nav ul li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+header nav ul li a {
+    display: inline-block;
+    color: #00aeff;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    font-size: 20px;
+    position: relative;
+}
+
+header nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff0000;
+}
+
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #00b7ff;
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 5%; /* Ajusta el padding para dispositivos más pequeños */
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: #fff;
+        padding: 10px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: right;
+}
+
+.center-text h1 {
+    font-size: 10rem; /* Tamaño del texto para computadoras */
+    color: #050505;
+}
+
+
+/* Media Queries para ajustar el tamaño del texto en diferentes tamaños de pantalla */
+@media only screen and (max-width: 1023px) {
+    .center-text h1 {
+        font-size: 5rem; /* Tamaño del texto para tabletas */
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .center-text h1 {
+        font-size: 5rem; /* Tamaño del texto para dispositivos móviles */
+    }
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.box {
+    display: flex; /* Utilizamos flexbox para organizar los elementos */
+    max-width: fit-content; /* Ancho máximo ajustado al contenido */
+    background-color: #00ccff; /* Color de fondo del cuadro */
+    border: 2px solid #000000; /* Borde del cuadro */
+    border-radius: 60px; /* Radio de borde */
+    padding: 40px; /* Espaciado interno */
+    margin-top: 20px; /* Mover el cuadro hacia abajo */
+}
+
+.box img {
+    width: 1000px; /* Ancho de la imagen */
+    height: auto; /* Altura automática */
+    margin-right: 60px; /* Margen a la derecha de la imagen */
+}
+
+.box .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente el contenido */
+}
+
+.box h2 {
+    color: #000000; /* Color del título */
+    margin: 10; /* Eliminar el margen por defecto */
+}
+
+.box p {
+    color: #000000; /* Color del texto */
+    margin: 0; /* Eliminar el margen por defecto */
+    display: block;
+}
+
+.cc-img {
+    width: 300px;
+    height: auto;
+}
+
+.cc-content {
+    margin-bottom: 20px;
+}
+
+.cc-title {
+    text-align: center; /* Centra horizontalmente el texto */
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+
+.cc-text {
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center; /* Centra horizontalmente el texto */
+}
+
+.cc-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cc-item {
+    flex-basis: 80%;
+    text-align: center; /* Centra horizontalmente el texto */
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+    .box {
+        display: block; /* Cambiamos la disposición a bloque */
+        max-width: 100%; /* Ancho máximo del contenedor */
+        padding: 10px; /* Reducimos el relleno */
+        margin-top: 200px; /* Ajustamos el margen superior */
+    }
+
+    .box img {
+        width: 100%; /* La imagen ocupa todo el ancho */
+        margin-right: 0; /* Eliminamos el margen derecho */
+        margin-bottom: 60px; /* Añadimos margen inferior */
+    }
+
+    .box .content {
+        text-align: center; /* Centramos el texto */
+    }
+
+    .box h2 {
+        font-size: 20px; /* Reducimos el tamaño del título */
+        margin-bottom: 20px; /* Ajustamos el margen inferior */
+    }
+
+    .box p {
+        font-size: 16px; /* Reducimos el tamaño del texto */
+        margin-bottom: 10px; /* Ajustamos el margen inferior */
+    }
+
+    .cc-img {
+        width: 10%; /* Ajustamos el ancho de la imagen para que sea responsive */
+        max-width: 300px; /* Limitamos el ancho máximo de la imagen */
+        margin: 0 auto 20px; /* Alineamos la imagen al centro y añadimos margen inferior */
+    }
+
+    .cc-title {
+        font-size: 20px; /* Reducimos el tamaño del título */
+    }
+
+    .cc-text {
+        font-size: 16px; /* Reducimos el tamaño del texto */
+        margin-bottom: 50px; /* Ajustamos el margen inferior */
+    }
+
+    .cc-flex {
+        flex-direction: column; /* Cambiamos la dirección del flexbox a columna */
+        align-items: center; /* Centramos horizontalmente los elementos */
+    }
+
+    .cc-item {
+        flex-basis: 100%; /* Ajustamos el ancho de los elementos al 100% */
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+}
+
+.button-container {
+    margin-top: 20px; /* Espacio entre la caja y el botón */
+}
+
+.button-container button {
+    padding: 20px 80px; /* Estilo de botón */
+    font-size: 100px;
+    background-color: #c8ff00;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #00fff2; /* Color de fondo al pasar el mouse */
+}
+@media only screen and (max-width: 767px) {
+    .button-container button {
+        padding: 8px 16px; /* Ajuste de padding para dispositivos pequeños */
+        font-size: 1.5em; /* Tamaño de fuente relativo para dispositivos pequeños */
+    }
+}

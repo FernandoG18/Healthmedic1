@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "futura md bt";
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+header {
+    background: #fff;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25%; /* Ajusta el padding para que sea responsive */
+}
+
+header .logo {
+    background-image: url('../img/logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40%; /* Ajusta el tamaño del logo para que sea responsive */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    z-index: 1; /* Asegura que el logo esté por debajo del menú */
+    position: relative; /* Establece una posición relativa para que el z-index funcione */
+}
+
+header nav {
+    position: absolute; /* Posiciona el menú de navegación de forma absoluta */
+    width: 55%; /* Ocupa el 60% del ancho del header */
+    right: 0; /* Alinea el menú a la derecha */
+    top: 30px; /* Coloca el menú debajo del header */
+    background: #fff;
+    padding: 1px;
+    transition: 0.3s;
+    z-index: 2; /* Asegura que el menú esté por encima del logo */
+}
+
+/* Media query para dispositivos más pequeños */
+@media only screen and (max-width: 700px) {
+    header nav {
+        width: 100%; /* En dispositivos pequeños, el menú ocupa todo el ancho */
+        left: 0; /* Ajusta la posición del menú para dispositivos más pequeños */
+        top: 70px; /* Ajusta la posición del menú para dispositivos más pequeños */
+    }
+}
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header nav ul li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+header nav ul li a {
+    display: inline-block;
+    color: #00aeff;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    font-size: 20px;
+    position: relative;
+}
+
+header nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff0000;
+}
+
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #00b7ff;
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 5%; /* Ajusta el padding para dispositivos más pequeños */
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: #fff;
+        padding: 10px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: right;
+}
+
+.center-text h1 {
+    font-size: 10rem; /* Tamaño del texto para computadoras */
+    color: #050505;
+}
+
+
+/* Media Queries para ajustar el tamaño del texto en diferentes tamaños de pantalla */
+@media only screen and (max-width: 1023px) {
+    .center-text h1 {
+        font-size: 5rem; /* Tamaño del texto para tabletas */
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .center-text h1 {
+        font-size: 5rem; /* Tamaño del texto para dispositivos móviles */
+    }
+}
+/* Estilos generales */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-image: url('../img/logo3.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .image-container {
+        /* Estilos para dispositivos móviles */
+        height: 35vh; /* Reducir la altura en dispositivos móviles */
+    }
+}
+
+/* Media Queries para tabletas */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .image-container {
+        /* Estilos para tabletas */
+        height: 35vh; /* Ajustar la altura para tabletas */
+    }
+}
+
+/* Media Queries para computadoras */
+@media only screen and (min-width: 1024px) {
+    .image-container {
+        /* Estilos para computadoras */
+        height: 100vh; /* Mantener la altura completa en computadoras */
+    }
+}
+/* Estilos generales */
+/* Estilos generales */
+.content {
+    text-align: center;
+    color: rgb(0, 0, 0); /* Color del texto dentro de la imagen */
+    font-size: 80px; /* Tamaño del texto dentro de la imagen */
+    z-index: 1; /* Asegura que el contenido esté por encima de la imagen */
+}
+
+/* Media Queries para ajustar el tamaño del texto en dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .content {
+        font-size: 30px; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+}
+
+/* Estilos para el contenido fuera de la imagen */
+h2, p {
+    text-align: center;
+    color: black; /* Color del texto fuera de la imagen */
+    font-size: 30px; /* Tamaño del texto fuera de la imagen */
+}
+
+h3, div {
+    text-align: center;
+    color: rgb(0, 0, 0); /* Color del texto fuera de la imagen */
+    font-size: 50px; /* Tamaño del texto fuera de la imagen */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .row {
+        flex-direction: column; /* Cambia la dirección del flex para dispositivos móviles */
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+}
+
+/* Media Queries para tabletas */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* No es necesario realizar cambios en el estilo del contenedor .row para tabletas */
+}
+
+/* Media Queries para computadoras */
+@media only screen and (min-width: 1024px) {
+    /* No es necesario realizar cambios en el estilo del contenedor .row para computadoras */
+}
+
+/* Estilos para cada especialidad */
+.especialidad {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 20px;
+    width: calc(33.33% - 20px); /* Ancho del cuadro (33.33% del ancho total) */
+    box-sizing: border-box; /* Incluir el padding y border en el ancho */
+    background-color: #ffffff; /* Color de fondo predeterminado */
+    display: inline-block; /* Mostrar como bloque en línea para ajustar automáticamente */
+}
+
+/* Estilos para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .especialidad {
+        width: calc(100% - 20px); /* Ancho del cuadro en dispositivos móviles */
+    }
+}
+
+/* Estilos para cada especialidad */
+.especialidad {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 20px;
+    width: calc(33.33% - 20px); /* Ancho del cuadro (33.33% del ancho total) */
+    box-sizing: border-box; /* Incluir el padding y border en el ancho */
+    background-color: #ffffff; /* Color de fondo predeterminado */
+    display: inline-block; /* Mostrar como bloque en línea para ajustar automáticamente */
+    transition: transform 0.3s; /* Transición suave al cambiar el tamaño */
+}
+
+/* Estilos para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .especialidad {
+        width: calc(100% - 20px); /* Ancho del cuadro en dispositivos móviles */
+    }
+}
+/* Estilos para cada fila de especialidades */
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Envolver las especialidades en múltiples filas */
+    justify-content: space-between; /* Distribuir uniformemente las especialidades */
+}
+
+/* Estilos para el contenido dentro del cuadro */
+.especialidad {
+    display: flex; /* Usar flexbox para alinear verticalmente el contenido */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    justify-content: space-between; /* Espacio uniformemente entre los elementos */
+    background-color: #dfc4c4; /* Color de fondo predeterminado */
+    padding: 20px; /* Espaciado interno */
+    margin-bottom: 20px; /* Margen inferior */
+    border-radius: 20px; /* Redondear las esquinas */
+    overflow: hidden; /* Ocultar contenido que se desborda */
+    transition: background-color 0.3s; /* Transición suave al cambiar el color de fondo */
+    width: calc(33.33% - 20px); /* Ancho de cada cuadro */
+    box-sizing: border-box; /* Incluir bordes y relleno en el ancho */
+}
+
+.especialidad img {
+    max-width: 50%; /* Ajustar imagen al ancho del cuadro */
+    transition: max-width 0.3s; /* Transición suave al cambiar el tamaño */
+    display: block; /* Hacer que la imagen sea un bloque para centrarla */
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+}
+
+.especialidad-content {
+    text-align: center;
+}
+
+.especialidad-content h4 {
+    margin-top: 10px;
+}
+
+.especialidad-content p {
+    margin-bottom: 10px;
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos para texto que desborde */
+    white-space: nowrap; /* Evitar el salto de línea para textos largos */
+    overflow: hidden; /* Ocultar el texto que desborde */
+}
+
+/* Estilos para los botones de las especialidades */
+.especialidad button {
+    background-color: #00b7ff; /* Color de fondo naranja */
+    color: white; /* Color del texto blanco */
+    padding: 7px 40px; /* Aumentar el padding para hacer el botón más grande */
+    font-size: 30px; /* Aumentar el tamaño del texto */
+    border: none; /* Eliminar borde */  
+    border-radius: 5px; /* Agregar bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.especialidad button:hover {
+    background-color: #48db60; /* Color de fondo naranja más oscuro al pasar el mouse */
+}
+
+.especialidad-content button {
+    background-color: #ec00008f; /* Color de fondo del botón */
+    color: rgb(0, 0, 0); /* Color del texto del botón */
+    border: none; /* Elimina el borde del botón */
+    padding: 16px 16px; /* Espaciado interno del botón (arriba/abajo izquierda/derecha) */
+    border-radius: 4px; /* Radio de borde del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+}
+
+.especialidad-content button:hover {
+    background-color: #ff0000; /* Color de fondo del botón al pasar el mouse */
+}
+
+.especialidad:hover {
+    background-color: #f03f3fda; /* Cambiar color de fondo al hacer hover */
+}
+
+.especialidad:hover img {
+    max-width: 60%; /* Hacer crecer la imagen al hacer hover */
+}
+
+/* Media query para pantallas más anchas */
+@media screen and (max-width: 1024px) {
+    .especialidad {
+        width: calc(100% - 20px); /* Ancho de cada cuadro en pantallas más pequeñas */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .especialidad {
+        width: calc(100% - 20px); /* Ancho completo en pantallas aún más pequeñas */
+    }
+}
+/* Estilos generales */
+.contacto-acreditacion {
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center; /* Centrar horizontalmente los elementos */
+    justify-content: center; /* Centrar verticalmente los elementos */
+    margin-top: 20px;
+    background-color: #a5a5a5; /* Color de fondo del cuadro */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 0px; /* Redondear las esquinas */
+}
+
+.contacto-acreditacion img {
+    max-width: 800px; /* Establecer el ancho máximo de la imagen */
+    width: 100%; /* Asegurar que la imagen se ajuste al contenedor */
+    margin-bottom: 10px; /* Agregar espacio debajo de la imagen */
+}
+
+.contacto,
+.acreditacion {
+    text-align: center; /* Centrar el texto */
+}
+
+.acreditacion {
+    text-align: right;
+}
+
+.estrellas {
+    color: gold; /* Color de las estrellas */
+    display: inline-block; /* Mostrar en línea */
+    margin-right: 5px; /* Espacio entre las estrellas y el texto */
+}
+
+.checked {
+    color: gold;
+}
+
+
+.contacto-acreditacion div i {
+    margin-bottom: 5px;
+}
+
+/* Estilos para dispositivos pequeños */
+@media screen and (max-width: 600px) {
+    .contacto-acreditacion {
+        max-width: calc(100% - 40px); /* Reducir el ancho máximo del cuadro */
+        margin: 10px auto; /* Alinear el cuadro al centro y agregar un poco de espacio */
+        padding: 10px; /* Reducir el espacio interno del cuadro */
+    }
+
+    .contacto-acreditacion img {
+        max-width: 100%; /* Establecer el ancho máximo de la imagen */
+        width: auto; /* Permitir que la imagen conserve su relación de aspecto */
+        margin-right: 0; /* Eliminar margen derecho en dispositivos pequeños */
+        margin-bottom: 10px; /* Reducir espacio debajo de la imagen en dispositivos pequeños */
+    }
+
+    .contacto,
+    .acreditacion {
+        text-align: center; /* Centrar el texto en dispositivos pequeños */
+        font-size: 14px; /* Reducir el tamaño del texto en dispositivos pequeños */
+    }
+
+    .contacto-acreditacion div {
+        margin-bottom: 5px; /* Reducir el espacio entre elementos en dispositivos pequeños */
+    }
+}

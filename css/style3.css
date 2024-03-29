@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "futura md bt";
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+header {
+    background: #fff;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25%; /* Ajusta el padding para que sea responsive */
+}
+
+header .logo {
+    background-image: url('../img/logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40%; /* Ajusta el tamaño del logo para que sea responsive */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    z-index: 1; /* Asegura que el logo esté por debajo del menú */
+    position: relative; /* Establece una posición relativa para que el z-index funcione */
+}
+
+header nav {
+    position: absolute; /* Posiciona el menú de navegación de forma absoluta */
+    width: 55%; /* Ocupa el 60% del ancho del header */
+    right: 0; /* Alinea el menú a la derecha */
+    top: 30px; /* Coloca el menú debajo del header */
+    background: #fff;
+    padding: 1px;
+    transition: 0.3s;
+    z-index: 2; /* Asegura que el menú esté por encima del logo */
+}
+
+/* Media query para dispositivos más pequeños */
+@media only screen and (max-width: 700px) {
+    header nav {
+        width: 100%; /* En dispositivos pequeños, el menú ocupa todo el ancho */
+        left: 0; /* Ajusta la posición del menú para dispositivos más pequeños */
+        top: 70px; /* Ajusta la posición del menú para dispositivos más pequeños */
+    }
+}
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header nav ul li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+header nav ul li a {
+    display: inline-block;
+    color: #00aeff;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    font-size: 20px;
+    position: relative;
+}
+
+header nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff0000;
+}
+
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #00b7ff;
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 5%; /* Ajusta el padding para dispositivos más pequeños */
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: #fff;
+        padding: 10px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: right;
+}
+
+.center-text h1 {
+    font-size: 10rem; /* Tamaño del texto para computadoras */
+    color: #050505;
+}
+
+
+/* Media Queries para ajustar el tamaño del texto en diferentes tamaños de pantalla */
+@media only screen and (max-width: 1023px) {
+    .center-text h1 {
+        font-size: 5rem; /* Tamaño del texto para tabletas */
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .center-text h1 {
+        font-size: 5rem; /* Tamaño del texto para dispositivos móviles */
+    }
+}
+/* Estilos generales */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-image: url('../img/fondoo.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .image-container {
+        /* Estilos para dispositivos móviles */
+        height: 35vh; /* Reducir la altura en dispositivos móviles */
+    }
+}
+
+/* Media Queries para tabletas */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .image-container {
+        /* Estilos para tabletas */
+        height: 35vh; /* Ajustar la altura para tabletas */
+    }
+}
+
+/* Media Queries para computadoras */
+@media only screen and (min-width: 1024px) {
+    .image-container {
+        /* Estilos para computadoras */
+        height: 100vh; /* Mantener la altura completa en computadoras */
+    }
+}
+
+
+/* Estilos para el contenedor de la imagen */
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajustar al 100% de la altura de la ventana */
+}
+
+/* Estilos para el contenido dentro del contenedor */
+.content {
+    background-color: rgba(0, 174, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%; /* Ancho máximo del contenido */
+    text-align: center;
+}
+
+/* Estilos para el formulario de inicio de sesión */
+.login-form {
+    width: 100%; /* Ajustar el ancho del formulario */
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el texto adicional */
+.additional-text {
+    margin-top: 10px; /* Espacio arriba del texto adicional */
+    color: #333; /* Color del texto adicional */
+    font-size: 2.5em; /* Tamaño de fuente del texto adicional */
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+}
+
+.title-container h2 {
+    margin: 0;
+}
+
+.content {
+    position: relative;
+}
+

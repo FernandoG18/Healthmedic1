@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "futura md bt";
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+header {
+    background: #fff;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25%; /* Ajusta el padding para que sea responsive */
+}
+
+header .logo {
+    background-image: url('../img/logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40%; /* Ajusta el tamaño del logo para que sea responsive */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    z-index: 1; /* Asegura que el logo esté por debajo del menú */
+    position: relative; /* Establece una posición relativa para que el z-index funcione */
+}
+
+header nav {
+    position: absolute; /* Posiciona el menú de navegación de forma absoluta */
+    width: 55%; /* Ocupa el 60% del ancho del header */
+    right: 0; /* Alinea el menú a la derecha */
+    top: 30px; /* Coloca el menú debajo del header */
+    background: #fff;
+    padding: 1px;
+    transition: 0.3s;
+    z-index: 2; /* Asegura que el menú esté por encima del logo */
+}
+
+/* Media query para dispositivos más pequeños */
+@media only screen and (max-width: 700px) {
+    header nav {
+        width: 100%; /* En dispositivos pequeños, el menú ocupa todo el ancho */
+        left: 0; /* Ajusta la posición del menú para dispositivos más pequeños */
+        top: 70px; /* Ajusta la posición del menú para dispositivos más pequeños */
+    }
+}
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header nav ul li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+header nav ul li a {
+    display: inline-block;
+    color: #00aeff;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    font-size: 20px;
+    position: relative;
+}
+
+header nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff0000;
+}
+
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #00b7ff;
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 5%; /* Ajusta el padding para dispositivos más pequeños */
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: #fff;
+        padding: 10px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+/* Estilos generales */
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: right;
+}
+
+.center-text h1 {
+    font-size: 10rem; /* Tamaño del texto para computadoras */
+    color: #050505;
+}
+
+
+/* Media Queries para ajustar el tamaño del texto en diferentes tamaños de pantalla */
+@media only screen and (max-width: 1023px) {
+    .center-text h1 {
+        font-size: 5rem; /* Tamaño del texto para tabletas */
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .center-text h1 {
+        font-size: 5rem; /* Tamaño del texto para dispositivos móviles */
+    }
+}
+
+/* Estilos generales */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-image: url('../img/quienesomos.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .image-container {
+        /* Estilos para dispositivos móviles */
+        height: 35vh; /* Reducir la altura en dispositivos móviles */
+    }
+}
+
+/* Media Queries para tabletas */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .image-container {
+        /* Estilos para tabletas */
+        height: 70vh; /* Ajustar la altura para tabletas */
+    }
+}
+
+/* Media Queries para computadoras */
+@media only screen and (min-width: 1024px) {
+    .image-container {
+        /* Estilos para computadoras */
+        height: 100vh; /* Mantener la altura completa en computadoras */
+    }
+}
+/* Estilos generales */
+.content {
+    text-align: center;
+    color: rgb(0, 0, 0); /* Color del texto dentro de la imagen */
+    font-size: 80px; /* Tamaño del texto dentro de la imagen */
+    z-index: 1; /* Asegura que el contenido esté por encima de la imagen */
+}
+
+/* Estilos para el contenido fuera de la imagen */
+h2, p {
+    text-align: center;
+    color: black; /* Color del texto fuera de la imagen */
+    font-size: 40px; /* Tamaño del texto fuera de la imagen */
+}
+
+h3, div {
+    text-align: center;
+    color: rgb(0, 0, 0); /* Color del texto fuera de la imagen */
+    font-size: 50px; /* Tamaño del texto fuera de la imagen */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .row {
+        flex-direction: column; /* Cambia la dirección del flex para dispositivos móviles */
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+}
+
+/* Media Queries para tabletas */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* No es necesario realizar cambios en el estilo del contenedor .row para tabletas */
+}
+
+/* Media Queries para computadoras */
+@media only screen and (min-width: 1024px) {
+    /* No es necesario realizar cambios en el estilo del contenedor .row para computadoras */
+}
+
+
+.contenedor-circulos {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .content {
+        font-size: 60px; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+
+    h2, p {
+        font-size: 40px; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+
+    h3, div {
+        font-size: 50px; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+}
+
+/* Media Queries para tabletas */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .content {
+        font-size: 70px; /* Ajustar el tamaño del texto para tabletas */
+    }
+
+    h2, p {
+        font-size: 45px; /* Ajustar el tamaño del texto para tabletas */
+    }
+
+    h3, div {
+        font-size: 55px; /* Ajustar el tamaño del texto para tabletas */
+    }
+}
+
+/* Media Queries para computadoras */
+@media only screen and (min-width: 1024px) {
+    /* No es necesario ajustar el tamaño del texto para computadoras */
+}
+
+.contenedor-circulos {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .content {
+        font-size: 30px; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+
+    h2, p {
+        font-size: 30px; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+
+    h3, div {
+        font-size: 30px; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+}
+
+/* Media Queries para tabletas */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .content {
+        font-size: 70px; /* Ajustar el tamaño del texto para tabletas */
+    }
+
+    h2, p {
+        font-size: 45px; /* Ajustar el tamaño del texto para tabletas */
+    }
+
+    h3, div {
+        font-size: 30px; /* Ajustar el tamaño del texto para tabletas */
+    }
+}
+
+/* Media Queries para computadoras */
+@media only screen and (min-width: 1024px) {
+    /* No es necesario ajustar el tamaño del texto para computadoras */
+}
+/* Estilos para otros dispositivos */
+@media only screen and (max-width: 1023px) {
+    .contenedor-circulos {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna */
+        align-items: center; /* Centra los elementos en el eje transversal */
+    }
+
+    .circulo {
+        margin-top: 20px; /* Ajusta el espacio entre los círculos */
+    }
+}
+    .circulo img {
+        width: 100%; /* Ajusta el tamaño de la imagen al tamaño del círculo */
+        height: auto; /* Mantiene la relación de aspecto */
+        border-radius: 30%;
+    }
+
+    .texto-bajo {
+        margin-top: 5px; /* Espacio entre la imagen y el texto para dispositivos más pequeños */
+        font-size: 20px; /* Tamaño del texto para dispositivos más pequeños */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Cambia el diseño de la galería para dispositivos más pequeños */
+        gap: 10px; /* Reduce el espacio entre elementos de la galería */
+        margin-top: 10px;
+    }
+
+    .box {
+        padding: 10px; /* Reduce el padding para dispositivos más pequeños */
+        font-size: 12px; /* Tamaño del texto para dispositivos más pequeños */
+    }
+
+    /* Estilos para el título */
+    h1 {
+        font-size: 24px; /* Tamaño del texto para dispositivos más pequeños */
+        margin-top: 30px;
+    }
+
+    /* Estilos para el círculo */
+    .circulo {
+        margin-top: 30px;
+    }
+
+    .circulo img {
+        width: 200px; /* Ajusta el tamaño de la imagen para dispositivos más pequeños */
+    }
+
+/* Estilos para dispositivos de escritorio */
+.opiniones-container {
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.opinion {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    background-color: #00f7ffbb;
+    padding: 20px;
+    transition: transform 0.5s ease; /* Añadimos la transición para transform */
+}
+
+.imagen-opinion {
+    margin-right: 20px;
+}
+
+.imagen-opinion img {
+    width: 200px;
+    height: auto;
+}
+
+.texto-opinion {
+    flex: 1;
+}
+
+.opinion {
+    opacity: 1; /* Establece la opacidad inicial */
+    transition: opacity 0.5s ease; /* Agrega una transición de opacidad */
+}
+
+.opinion.oculto {
+    opacity: 0; /* Establece la opacidad a 0 cuando la clase 'oculto' está presente */
+}
+
+/* Estilos para dispositivos más pequeños */
+@media only screen and (max-width: 767px) {
+    .opiniones-container {
+        /* Ajustes para dispositivos más pequeños */
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center; /* Centra horizontalmente */
+    }
+
+    .opinion {
+        /* Ajustes para dispositivos más pequeños */
+        width: 90%; /* Ocupa el ancho completo */
+        margin: 20px auto; /* Centra horizontalmente */
+    }
+}

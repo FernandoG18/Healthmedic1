@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style3.css"> <!-- Enlaza tu archivo CSS aquí -->
+    <title>XD</title>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" >INICIO</a>
+                </li>
+                <li>
+                    <a href="navbar.html">QUIENES SOMOS</a>
+                </li>
+                <li>
+                    <a href="educacioncontinua.html">EDUCACION CONTINUA</a>
+                </li>
+                <li>
+                    <a href="">CAMPUS</a>
+                </li>
+                <li>
+                    <a href="contacto.html">CONTACTO</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <label for="nav_check" class="hamburger">
+            <div class="cody"></div>
+            <div></div>
+            <div></div>
+        </label>
+        </header>
+        <div class="image-container">
+            <div class="title-container">
+                <div class="additional-text"></div>
+                <h2></h2>
+            </div>
+            <div class="content">
+                <div class="login-form">
+                    <form id="login-form">
+                        <div class="form-group">
+                            <h3>Bienvenido al Instituto Healthmedic</h3><br>
+                            <label for="username">Usuario:</label>
+                            <input type="text" id="username" name="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña:</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        <button type="submit">Iniciar sesión</button>
+                        <p id="password-error" style="color: red; display: none;">Contraseña incorrecta</p>
+                    </form>
+                    <h3>Por favor, inicia sesión para acceder a nuestros recursos y servicios exclusivos.</h3>
+                </div>
+            </div>
+        </div>
+        
+</body>
+<script src="js/script.js"></script>
+</html>
